@@ -3,6 +3,7 @@ package com.bsuir.herman.authscreenapp
 import com.bsuir.herman.authscreenapp.api.SaperApi
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 
 class NetworkService {
@@ -15,6 +16,7 @@ class NetworkService {
     init {
         mRetrofit = Retrofit.Builder()
                 .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
                 .build()
 
         api = mRetrofit!!.create(SaperApi::class.java)

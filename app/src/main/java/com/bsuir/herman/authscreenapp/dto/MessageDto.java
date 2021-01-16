@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 public class MessageDto {
     @SerializedName("message")
     @Expose
-    private transient String message;
+    private String message;
 
     public MessageDto(String message) {
         this.message = message;
